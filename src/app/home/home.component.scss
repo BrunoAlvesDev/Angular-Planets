@@ -1,0 +1,92 @@
+@import "../../themes/remc.scss";
+
+:host {
+  .universe {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--universe);
+
+    .star {
+      position: absolute;
+      width: 5vw;
+      height: 5vw;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: var(--yellow);
+      box-shadow: 0 0 40px 10px var(--yellow);
+
+      animation: starLight 5s linear infinite;
+    }
+
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+
+      .movement {
+        width: 100%;
+        height: auto;
+
+        .planet {
+          width: 2vw;
+          height: 2vw;
+
+          border-radius: 50%;
+          background-color: var(--blue);
+
+          .moon {
+            width: 1vw;
+            height: 1vw;
+            background-color: #848484;
+            margin-right: remc(20);
+          }
+        }
+      }
+
+      .rotation {
+        animation: rotation 10s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    @keyframes starLight {
+      0% {
+        box-shadow: 0 0 40px 10px var(--yellow);
+      }
+      20% {
+        box-shadow: 0 0 40px 5px var(--yellow);
+      }
+      30% {
+        box-shadow: 0 0 40px 3px var(--yellow);
+      }
+      55% {
+        box-shadow: 0 0 40px 8px var(--yellow);
+      }
+      100% {
+        box-shadow: 0 0 40px 10px var(--yellow);
+      }
+    }
+
+    @keyframes translation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

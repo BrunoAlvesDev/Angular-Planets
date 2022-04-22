@@ -1,0 +1,17 @@
+<div class="universe">
+  <div class="star"></div>
+  <div
+    *ngFor="let planet of planets"
+    class="orbit"
+    [style.width]="planet.distance"
+  >
+    <div class="movement" [style.animation]="planet.speed">
+      <div
+        class="planet"
+        [style.background-color]="planet.color"
+        [style.width]="planet.size"
+        [style.height]="planet.size"
+      ></div>
+    </div>
+  </div>
+</div>
